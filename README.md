@@ -11,18 +11,23 @@ This repository presents a groundbreaking lightweight framework for driver distr
 
 The KRCA distillation framework simultaneously optimizes:
 
-1.
-​​Hard labels​​ (L_cls) for final prediction alignment
+1.**​​Hard labels​​** (L_cls) for final prediction alignment
 
-2.
-​​Soft labels​​ (L_TC + L_NC) with target/non-target class decomposition
+2.​​**Soft labels​​** (L_TC + L_NC) with target/non-target class decomposition
 
-3.
-​​Sample relations​​ (L_RC) preserving cross-sample dependencies
+3.**Sample relations​​** (L_RC) preserving cross-sample dependencies
 
-4.
-​​Inter-layer attention​​ (L_SC + L_AT) transferring spatial focus patterns
+4.​​**Inter-layer attention​​** (L_SC + L_AT) transferring spatial focus patterns
 
-This integrated approach solves the critical problems of ​​behavioral preference bias​​ and ​​feature mutual exclusion​​ observed in single-knowledge distillation methods, particularly enhancing recognition of hand-occluded actions like left-handed phone use (C5) where baseline recall improved by ​​17.18%​​ in low-light conditions.
+This integrated approach solves the critical problems of ​​behavioral preference bias​​ and ​​feature mutual exclusion​​ observed in single-knowledge distillation methods, particularly enhancing recognition of hand-occluded actions  in low-light conditions.
 
 ![FIG2](https://github.com/user-attachments/assets/a57d5f69-e033-46ef-9a46-9fc48697940b)
+🌟 ​​**Key Performance Highlights​**
+
+Modified SqueezeNet_LW
+
+•Parameters reduced from 740.55K → 187.43K (**74.7%↓**)
+
+•FLOPs reduced from 750.32M → 254.3M (**66.1%↓**)
+
+•Inference speed: 120.88 FPS (**2.5× faster than baseline**)
