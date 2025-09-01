@@ -5,8 +5,7 @@
 
 This repository presents a groundbreaking lightweight framework for driver distraction recognition, achieving ​​99.83% accuracy​​ with only ​​187.43K parameters​​. Our novel KRCA (Knowledge Relation Comparison with Attention) distillation method synergistically combines four complementary knowledge types for the first time in driving behavior recognition, overcoming traditional distillation's limitations in handling light variations and behavioral similarities.
 
-![FIG1](https://github.com/user-attachments/assets/7423dfef-c3dc-4f2f-b7e7-65a6da380ef4)
-
+![FIG2](https://github.com/user-attachments/assets/a57d5f69-e033-46ef-9a46-9fc48697940b)
 🔬 ​​**Core Innovation: Multi-Knowledge Distillation Framework​​**
 
 The KRCA distillation framework simultaneously optimizes:
@@ -21,7 +20,7 @@ The KRCA distillation framework simultaneously optimizes:
 
 This integrated approach solves the critical problems of ​​behavioral preference bias​​ and ​​feature mutual exclusion​​ observed in single-knowledge distillation methods, particularly enhancing recognition of hand-occluded actions  in low-light conditions.
 
-![FIG2](https://github.com/user-attachments/assets/a57d5f69-e033-46ef-9a46-9fc48697940b)
+
 🌟 ​​**Key Performance Highlights​**
 
 Modified SqueezeNet_LW
