@@ -4,3 +4,6 @@
 ​​Revolutionizing edge deployment with multi-knowledge distillation and light robustness optimization​​
 
 This repository presents a groundbreaking lightweight framework for driver distraction recognition, achieving ​​99.83% accuracy​​ with only ​​187.43K parameters​​. Our novel KRCA (Knowledge Relation Comparison with Attention) distillation method synergistically combines four complementary knowledge types for the first time in driving behavior recognition, overcoming traditional distillation's limitations in handling light variations and behavioral similarities.
+
+![FIG1](https://github.com/user-attachments/assets/7423dfef-c3dc-4f2f-b7e7-65a6da380ef4)
+
