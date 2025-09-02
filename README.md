@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## Data Preparation
 
-You can put the downloaded data here:
+You can use the following structure to prepare the data.
 ```
 data
 ├── SFD3
@@ -105,12 +105,22 @@ data
 
 a. First, run Convnet_try.py to train the teacher network.
 
+```
+python3 Convnet_try.py
+```
+
 b. Second, run SQ_LW_try.py to train the student network.
-
+```
+python3 SQ_LW_try.py
+```
 c.Next, run convnext_KRAC_SQ_LW.py to perform KRAC knowledge distillation.
-
-d.Finally, run SqueezeNet_LW_result.py to analyze the results of the SqueezeNet_LW model after KRAC knowledge distillation.
-
+```
+python3 convnext_KRAC_SQ_LW.py
+```
+d.Finally, run SqueezeNet_LW_result.py to analyze the results of the SqueezeNet_LW model after KRAC knowledge distillation.The AUC and SF folders contain SqueezeNet_LW model parameters before and after distillation using various methods. These parameters can be directly modified in SqueezeNet_LW_result.py to alter the model's output results. SqueezeNet.pth holds the trained parameters of the SqueezeNet_LW model, while SqueezeNet_HL.pth contains parameters distilled using Hard labels. SqueezeNet_SL.pth contains parameters after distillation using soft labels, SqueezeNet_SR.pth after distillation using sample relations, SqueezeNet_IA.pth after distillation using inter-layer attention, and SqueezeNet_HL_SL.pth after distillation using both soft labels and sample relations. The remaining files follow a similar naming convention.
+```
+python3 SqueezeNet_LW_result.py
+```
 
 ## Citation 
 If you find this project useful in your research, please consider citing:
