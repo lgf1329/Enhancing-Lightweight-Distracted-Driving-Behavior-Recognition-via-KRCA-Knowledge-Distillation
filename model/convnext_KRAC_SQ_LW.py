@@ -80,23 +80,21 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 # labels_train = pd.read_csv('E:\\Code fusion\\list_20usatrain_no_noise-new.csv')
 # labels_test = pd.read_csv('E:\\Code fusion\\list_6usatest_no_noise.csv')
 '---------------SF数据集---------------------'
-data_dir_train = r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_usa_集合后重新划分/train'
-data_dir_test = r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_usa_集合后重新划分/test'
-labels_train = pd.read_csv(r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_usa_集合后重新划分/train_labels.csv')
-labels_test = pd.read_csv(r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_usa_集合后重新划分/test_labels.csv')
-save_model_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/ghostnet/模型保存_Conv-SQ-KRCA-13"
-teacher_model_weight_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/convnext_集合后重新划分/convnext50.pth"
-# model_weight_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/SqueezeNet_集合后重新划分/SqueezeNet85.pth"
-model_weight_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/SqueezeNet_集合后重新划分/SqueezeNet13.pth"
+data_dir_train = r'/home/luo/data/SFD3/train'
+data_dir_test = r'/home/luo/data/SFD3/test'
+labels_train = pd.read_csv(r'/home/luo/data/SFD3/train_labels.csv')
+labels_test = pd.read_csv(r'/home/luo/data/SFD3/test_labels.csv')
+save_model_path = r"/home/luo/model_pth/Conv-SQ_LW-KRCA"
+teacher_model_weight_path = r"/home/luo/model_pth/convnext50.pth"
+model_weight_path = r"/home/luo/model_pth/SqueezeNet13.pth"
 # '---------------ASU数据集---------------------'
-# data_dir_train = r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_ASU_all_集合后重新划分/train'
-# data_dir_test = r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_ASU_all_集合后重新划分/test'
-# labels_train = pd.read_csv(r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_ASU_all_集合后重新划分/train_labels.csv')
-# labels_test = pd.read_csv(r'/home/luo/知识蒸馏/4-代码/第三章/数据/data_ASU_all_集合后重新划分/test_labels.csv')
-# save_model_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/ghostnet_ASU/模型保存_Conv-SQ-KRCA_NOHD5"
-# # save_model_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/ghostnet_ASU/模型保存_Conv-SQ-KRCA"
-# teacher_model_weight_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/convnext_ASU_集合后重新划分/convnext14.pth"
-# model_weight_path = r"/home/luo/知识蒸馏/4-代码/第三章/模型参数/SqueezeNet_ASU_集合后重新划分/SqueezeNet46.pth"
+# data_dir_train = r'/home/luo/data/AUC/train'
+# data_dir_test = r'/home/luo/data/AUC/test'
+# labels_train = pd.read_csv(r'/home/luo/data/AUC/train_labels.csv')
+# labels_test = pd.read_csv(r'/home/luo/data/AUC/test_labels.csv')
+# save_model_path = r"/home/luo/model_pth/Conv-SQ-KRCA_AUC"
+# teacher_model_weight_path = r"/home/luomodel_pth/convnext14.pth"
+# model_weight_path = r"/home/luomodel_pth/SqueezeNet46.pth"
 
 
 BATCH_SIZE = 4  # 从1调整为4，配合梯度累积
@@ -602,7 +600,7 @@ def student_kd_main(save_model_path):
     flops, params = count_parameters(model)
 
     print(f"FLOPs: {flops}")
-    print(f"参数数量 (Weights): {params}")
+    print(f"Weights: {params}")
     # 教师模型冻结优化[2](@ref)
     teacher_model = convnext_tiny()
     teacher_model.head = nn.Linear(teacher_model.head.in_features, 10)
