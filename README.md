@@ -30,7 +30,7 @@ Modified SqueezeNet_LW
 •Inference speed: 120.88 FPS (**2.5× faster than baseline**)
 
 📁 ​​**Datasets​**
-AUC (American University in Cairo) Dataset​ and SFD3 (State Farm Distracted Driver Detection)​
+ASU Dataset​ and SFD3 (State Farm Distracted Driver Detection)​
 ## Installation
 a. Clone this repository.
 ```shell
